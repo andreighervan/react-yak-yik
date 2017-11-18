@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Comment from './../presentation/Comment';
 import styles from './styles';
+import {APIManager} from '../../../utils';
 
 class Comments extends Component {
     constructor() {
@@ -14,7 +15,19 @@ class Comments extends Component {
             list: []
         }
     }
-
+    componentDidMount(){
+        console.log('componentDidMount');
+        APIManager.get('/api/comment',null,(err,response)=>{
+            if(err){
+                alert('ERROR: '+err.message);
+                return
+            }
+            console.log('RESULTS: '+JSON.stringify(response.results));
+            this.setState({
+                list:response.results
+            })
+        });
+    }
     render() {
         const commentList = this.state.list.map((comment, i)=> {
             return (
