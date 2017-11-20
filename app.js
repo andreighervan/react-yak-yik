@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var api = require('./routes/api');
 var mongoose = require('mongoose');
+
+
 var dbUrl = 'mongodb://localhost/yak-yik';
 mongoose.connect(dbUrl, function (err, res) {
     if (err) {
@@ -19,6 +21,8 @@ mongoose.connect(dbUrl, function (err, res) {
 
 var app = express();
 
+app.set('port', process.env.PORT || 3000);
+app.listen(app.get('port'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
