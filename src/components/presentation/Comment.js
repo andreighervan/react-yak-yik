@@ -5,7 +5,7 @@ class Comment extends Component {
         return (
             <div>
                 <p>{this.props.currentComment.username}</p>
-               <span> {this.props.currentComment.body}</span>
+               <span style={{marginLeft:12}}> {this.props.currentComment.body}</span>
                    <span>|</span>
                    <span>{this.props.currentComment.timestamp}</span>
                 <hr/>

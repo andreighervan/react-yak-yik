@@ -36,7 +36,7 @@ class Zones extends Component {
     }
     addZone() {
         console.log('ADD ZONE ' + JSON.stringify(this.state.zone));
-        let updatedZone = Object.assign([], this.state.zone);
+        let updatedZone = Object.assign({}, this.state.zone);
         updatedZone['zipCodes']=updatedZone.zipCode.split(',');
         APIManager.post('/api/zone', updatedZone, (err, response)=> {
             if (err) {

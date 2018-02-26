@@ -11,7 +11,7 @@ var mongoose = require('mongoose');
 
 
 var dbUrl = 'mongodb://localhost/yak-yik';
-mongoose.connect(dbUrl, function (err, res) {
+mongoose.connect(dbUrl,  { useMongoClient: true },function (err, res) {
     if (err) {
         console.log('DB Connection failed ' + err);
     } else {
@@ -21,7 +21,7 @@ mongoose.connect(dbUrl, function (err, res) {
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3030);
 app.listen(app.get('port'));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
