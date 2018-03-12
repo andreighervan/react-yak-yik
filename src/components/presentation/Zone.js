@@ -6,7 +6,7 @@ class Zone extends Component {
         const style=styles.zone;
         return (
             <div style={style.container}>
-                <h2><a style={style.title} href='#'>{this.props.currentZone.name}</a></h2>
+              <a style={style.title} href='#'>{this.props.currentZone.name}</a>
                 <span className="detail">{this.props.currentZone.zipCodes}</span><br/>
                 <span className="detail">{this.props.currentZone.numComments} comments</span>
             </div>

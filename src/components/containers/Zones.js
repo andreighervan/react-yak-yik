@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import Zone from './../presentation/Zone';
 import {APIManager} from '../../../utils';
+import styles from './styles';
 
 class Zones extends Component {
     constructor(){
@@ -8,7 +9,7 @@ class Zones extends Component {
         this.state={
             zone:{
                 name:'',
-                zipCode:''
+                zipCodes:''
             },
             list:[]
         }
